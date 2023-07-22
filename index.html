@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bookmark</title>
+  <!-- Google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@400;700&family=Pacifico&family=Righteous&display=swap"
+    rel="stylesheet">
+  <!-- Font Awesome Library Icon -->
+  <link rel="stylesheet" href="css/all.min.css" />
+  <!-- Bootstrap Stylesheet -->
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+
+<body class="position-relative">
+
+  <!-- ======#--bookmark--#===== -->
+  <section id="bookmark" class="bookmark container text-center py-3">
+    <div class="d-flex flex-column justify-content-center align-items-center gap-3 p-3">
+      <h1 class="position-relative">Bookmarker</h1>
+      <p class="dot-border dot-border-bottom w-100"></p>
+      <h2><i class="fa-solid fa-bookmark"></i> Bookmark your favorite sites <i class="fa-solid fa-bookmark"></i></h2>
+      <div class="d-flex flex-column justify-content-center align-items-start gap-2 w-100">
+        <!-- bookmark Name -->
+        <label for="bookmarkName"><i class="fa-solid fa-book-bookmark pe-2 needs-validation"></i>
+          Site Name</label>
+        <input oninput="validName()" type="text" placeholder="Bookmark Name" id="bookmarkName"
+          class="form-control">
+        <!-- bookmark URL -->
+        <label for="bookmarkURL"><i class="fa-solid fa-link pe-2"></i>Site URL</label>
+        <input oninput="validUrl()" type="text" placeholder="Website URL" class="form-control" id="bookmarkURL">
+      </div>
+      <!-- button submit -->
+      <button onclick="addBookmark()" class="btn px-5 btn-submit" id="btnSubmit">Submit</button>
+    </div>
+  </section>
+
+  <!-- ======#--Bookmarker Table--#===== -->
+  <section class="table-bookmarker px-3" id="table-bookmarker">
+    <div class="container">
+      <div class="row justify-content-center align-items-center text-center gap-3">
+        <p class="dot-border dot-border-top"></p>
+        <input type="text" oninput="search(this.value)" class="form-control py-2 mb-2" placeholder="search Product Name"
+          name="name" id="search" />
+        <table class="table text-center">
+          <thead>
+            <th>Index</th>
+            <th>Website Name</th>
+            <th>Visit</th>
+            <th>Delete</th>
+            <th>Update</th>
+          </thead>
+          <tbody id="displayBookmarks">
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="dialog"></section>
+</body>
+<!-- ==script== -->
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+
+</html>
